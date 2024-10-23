@@ -8,16 +8,13 @@ public class cameraFollow : MonoBehaviour
     private float smoothTime = 0.25f;
     private Vector3 velocity = Vector3.zero;
 
-    [Serialized] private
+    [SerializeField] private Transform target;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        private Vector2
+        Vector3 targetPosition = target.position + offset;
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
     }
 }
