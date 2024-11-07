@@ -29,4 +29,9 @@ public class JoystickMove : MonoBehaviour
             rb.AddForce(Vector2.up * bouyancyForce);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("LADDER TRIGGER");
+    }
 }
