@@ -9,6 +9,7 @@ public class JoystickMove : MonoBehaviour
     public float dampingFactor = 0.95f; //"slide" effect
     public float bouyancyForce = 1.0f;
     private Rigidbody2D rb;
+    public MenuLoader menuLoader;
 
     // Start is called before the first frame update
     private void Start()
@@ -33,5 +34,9 @@ public class JoystickMove : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("LADDER TRIGGER");
+        if (menuLoader != null)
+        {
+            menuLoader.openMenu();
+        }
     }
 }
